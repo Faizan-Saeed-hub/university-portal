@@ -47,13 +47,7 @@ export default function Home() {
       website: "https://uol.edu.pk",
     },
   ];
-  const educationImages = [
-    "https://images.pexels.com/photos/6147369/pexels-photo-6147369.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/1205651/pexels-photo-1205651.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    "https://images.pexels.com/photos/1184572/pexels-photo-1184572.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  ];
+
   return (
     <div className="home-page">
       <Navbar />
@@ -105,16 +99,10 @@ export default function Home() {
         </div>
 
         <div className="hero-right">
-          <div className="hero-right">
-            <img
-              src={
-                educationImages[
-                Math.floor(Math.random() * educationImages.length)
-                ]
-              }
-              alt="University Students"
-            />
-          </div>
+          <img
+            src="https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="University Students"
+          />
         </div>
       </section>
 
