@@ -614,3 +614,5 @@ app.listen(PORT, () => {
     `🚀 Server running on port ${PORT}`
   );
 });
+
+module.exports = app;
