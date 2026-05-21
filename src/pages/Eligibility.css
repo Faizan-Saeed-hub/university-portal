@@ -1,0 +1,1149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+/* ================= CONTAINER ================= */
+
+.eligibility-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+/* ================= CARD ================= */
+
+.eligibility-card {
+  width: 100%;
+  max-width: 850px;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+.eligibility-card h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1e3a8a;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* ================= LABELS ================= */
+
+label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* ================= INPUTS ================= */
+
+input,
+select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 15px;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb;
+  
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+/* ================= GRID ================= */
+
+.marks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 5px;
+}
+
+/* ================= CHECKBOX ================= */
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  background: #f3f4f6;
+  padding: 14px 16px;
+  border-radius: 12px;
+}
+
+.checkbox-field input {
+  width: 18px;
+  height: 18px;
+  accent-color: #2563eb;
+}
+
+.checkbox-field label {
+  margin: 0;
+  cursor: pointer;
+}
+
+/* ================= BUTTON ================= */
+
+.check-btn {
+  width: 100%;
+  margin-top: 30px;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.check-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.3);
+}
+
+.check-btn:disabled {
+  background: gray;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ================= POPUP OVERLAY ================= */
+
+.merit-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 14, 30, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 24px;
+  z-index: 1000;
+  animation: fadeInOverlay 0.3s ease;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ================= POPUP CARD CONTAINER ================= */
+
+.merit-content {
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh;
+
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 40px;
+
+  animation: popupScale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 
+    0 25px 80px rgba(8, 14, 30, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+
+  scrollbar-width: thin;
+  scrollbar-color: #e2e8f0 transparent;
+  position: relative;
+}
+
+/* ================= SCROLLBAR ================= */
+
+.merit-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.merit-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* ================= HEADINGS ================= */
+
+.merit-content h2 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1e3a8a, #0f172a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+.merit-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+/* ================= POPUP INFO & RESULTS ================= */
+
+.popup-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 28px;
+  border-bottom: 1px dashed rgba(226, 232, 240, 0.8);
+}
+
+.popup-info.centered {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.popup-info.centered .popup-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  width: 100%;
+}
+
+.popup-info.centered .popup-desc b {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #475569;
+}
+
+.merit-badge-value {
+  font-size: 50px;
+  font-weight: 850;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 8px 24px;
+  border-radius: 20px;
+  background-color: rgba(37, 99, 235, 0.06);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.05);
+  margin-top: 5px;
+  animation: pulseScale 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseScale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* ================= STATUS / ALERTS ================= */
+
+.success,
+.fail {
+  width: 100%;
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 18px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.success {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(5, 150, 105, 0.04));
+  color: #065f46;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.04);
+}
+
+.fail {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(220, 38, 38, 0.04));
+  color: #991b1b;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.04);
+}
+
+.success.large,
+.fail.large {
+  margin: 15px 0 25px 0;
+  padding: 30px 24px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+/* Eligibility inner prompts */
+.eligibility-prompt-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.eligibility-prompt-text-success {
+  font-size: 14px;
+  font-weight: 500;
+  color: #047857;
+}
+
+.eligibility-prompt-text-fail {
+  font-size: 14px;
+  font-weight: 500;
+  color: #b91c1c;
+}
+
+.eligibility-inline-btn {
+  color: #ffffff;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eligibility-inline-btn.success-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.eligibility-inline-btn.success-btn:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
+}
+
+.eligibility-inline-btn.fail-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.eligibility-inline-btn.fail-btn:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.25);
+}
+
+/* ================= EXTRA CUTOFF / PROGRAM DETAILS ================= */
+
+.extra-info {
+  margin-top: 24px;
+}
+
+.cutoff-box,
+.program-box {
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+}
+
+.cutoff-box:hover,
+.program-box:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+.cutoff-box h3,
+.program-box h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+  letter-spacing: 0.2px;
+}
+
+.cutoff-years {
+  font-size: 15px;
+  font-weight: 600;
+  color: #475569;
+  letter-spacing: 0.5px;
+  text-align: center;
+  background: #f1f5f9;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.extra-info ul {
+  list-style: none;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.extra-info li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  margin-bottom: 0;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #334155;
+  transition: all 0.25s ease;
+}
+
+.extra-info li:hover {
+  transform: translateX(4px);
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.extra-info li span:last-child {
+  font-weight: 700;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.06);
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+/* ================= POPUP STAGE 2: DEGREE SELECTION ================= */
+
+.popup-info.block-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.popup-info h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.popup-desc {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+  display: block;
+}
+
+.popup-desc b {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.popup-select {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0f172a;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.popup-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 248, 0.12);
+  outline: none;
+}
+
+.popup-detail-text {
+  display: block;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #475569;
+  margin-top: 15px;
+}
+
+.popup-detail-text b {
+  color: #0f172a;
+}
+
+/* ================= POPUP BUTTONS ================= */
+
+.popup-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.popup-buttons.margin-top {
+  margin-top: 30px;
+}
+
+.popup-buttons button {
+  flex: 1;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Primary Action Buttons */
+.apply-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.2);
+}
+
+.apply-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+}
+
+.apply-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Secondary / Close / Danger Buttons */
+.popup-close-btn {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.popup-close-btn:hover {
+  transform: translateY(-2px);
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.popup-close-btn.back-btn {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.popup-close-btn.back-btn:hover {
+  transform: translateY(-2px);
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+/* ================= STEP INDICATOR ================= */
+
+.popup-step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 28px;
+  padding: 0 10px;
+}
+
+.popup-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.35;
+  transition: all 0.3s ease;
+}
+
+.popup-step.active {
+  opacity: 1;
+}
+
+.popup-step.done {
+  opacity: 0.7;
+}
+
+.popup-step-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.popup-step.active .popup-step-circle {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
+}
+
+.popup-step.done .popup-step-circle {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.popup-step span {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #64748b;
+}
+
+.popup-step.active span {
+  color: #1e3a8a;
+}
+
+.popup-step-line {
+  width: 50px;
+  height: 2px;
+  background: #e2e8f0;
+  margin: 0 8px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+/* ================= STAGE HEADER ================= */
+
+.popup-stage1-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.popup-stage-icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+  display: inline-block;
+  animation: bounceIn 0.5s ease;
+}
+
+.popup-stage-icon-success {
+  animation: bounceIn 0.5s ease, pulseScale 2s infinite ease-in-out;
+}
+
+.popup-stage-icon-fail {
+  animation: bounceIn 0.5s ease;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.popup-stage-title {
+  font-size: 24px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1e3a8a, #0f172a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+
+.popup-title-success {
+  background: linear-gradient(135deg, #059669, #047857);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.popup-title-fail {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.popup-stage-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.popup-stage-subtitle strong {
+  color: #2563eb;
+}
+
+/* ================= MERIT SCORE CARD ================= */
+
+.popup-merit-score-card {
+  text-align: center;
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 28px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03);
+}
+
+.popup-merit-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.popup-merit-context {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 8px;
+}
+
+.popup-merit-context strong {
+  color: #334155;
+}
+
+/* ================= STATUS CARDS (Stage 1) ================= */
+
+.popup-status-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 24px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.popup-status-success {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(5, 150, 105, 0.03));
+  border: 1px solid rgba(16, 185, 129, 0.18);
+}
+
+.popup-status-fail {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.06), rgba(220, 38, 38, 0.03));
+  border: 1px solid rgba(239, 68, 68, 0.18);
+}
+
+.popup-status-icon-wrap {
+  font-size: 32px;
+}
+
+.popup-status-message {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.popup-status-message strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.popup-status-success .popup-status-message strong {
+  color: #059669;
+}
+
+.popup-status-fail .popup-status-message strong {
+  color: #dc2626;
+}
+
+/* Next Step Button inside status card */
+.popup-next-btn {
+  border: none;
+  padding: 11px 26px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.25s ease;
+  margin-top: 4px;
+}
+
+.popup-next-success {
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+}
+
+.popup-next-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+.popup-next-fail {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+}
+
+.popup-next-fail:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+}
+
+/* ================= CUTOFF SECTION (Stage 1) ================= */
+
+.popup-cutoff-section,
+.popup-similar-section {
+  margin-bottom: 18px;
+}
+
+.popup-section-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 12px;
+}
+
+.popup-cutoff-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.popup-cutoff-year {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 14px 10px;
+  transition: all 0.25s ease;
+}
+
+.popup-cutoff-year:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+.popup-cutoff-yr-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.popup-cutoff-yr-val {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e3a8a;
+}
+
+/* ================= SIMILAR PROGRAMS (Stage 1) ================= */
+
+.popup-similar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.popup-similar-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.popup-similar-item:hover {
+  border-color: #cbd5e1;
+  transform: translateX(4px);
+}
+
+.popup-similar-merit {
+  font-weight: 700;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+  padding: 3px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+/* ================= DEGREE CARD (Stage 2) ================= */
+
+.popup-degree-card {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 4px;
+}
+
+.popup-degree-required {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.popup-degree-req-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #94a3b8;
+}
+
+.popup-degree-req-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e3a8a;
+  line-height: 1.5;
+}
+
+.popup-select-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+/* ================= RESULT CARD (Stage 3 & 4) ================= */
+
+.popup-result-card {
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 4px;
+}
+
+.popup-result-success {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.04), rgba(5, 150, 105, 0.02));
+  border: 1px solid rgba(16, 185, 129, 0.18);
+}
+
+.popup-result-fail {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.04), rgba(220, 38, 38, 0.02));
+  border: 1px solid rgba(239, 68, 68, 0.18);
+}
+
+.popup-result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.popup-result-key {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.popup-result-val {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  text-align: right;
+  max-width: 60%;
+}
+
+.popup-result-merit {
+  font-size: 18px;
+  font-weight: 800;
+  color: #2563eb;
+}
+
+.popup-result-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.06);
+  margin: 0;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popupScale {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .eligibility-card {
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .eligibility-card h2 {
+    font-size: 26px;
+  }
+
+  .marks-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .check-btn {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .merit-content {
+    padding: 28px 20px;
+    border-radius: 22px;
+  }
+
+  .popup-stage-title {
+    font-size: 20px;
+  }
+
+  .merit-badge-value {
+    font-size: 38px;
+    padding: 6px 18px;
+  }
+
+  .popup-cutoff-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+
+  .popup-cutoff-yr-val {
+    font-size: 18px;
+  }
+
+  .popup-buttons {
+    flex-direction: column;
+  }
+
+  .popup-step-line {
+    width: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .eligibility-card {
+    padding: 18px;
+  }
+
+  input,
+  select {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .eligibility-card h2 {
+    font-size: 22px;
+  }
+
+  .check-btn {
+    font-size: 15px;
+  }
+
+  .merit-content {
+    padding: 22px 16px;
+    border-radius: 20px;
+  }
+
+  .popup-stage-title {
+    font-size: 18px;
+  }
+
+  .merit-badge-value {
+    font-size: 32px;
+  }
+
+  .popup-cutoff-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .popup-step-line {
+    width: 20px;
+  }
+
+  .popup-step-circle {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .popup-result-val {
+    max-width: 55%;
+    font-size: 13px;
+  }
+
+  .popup-buttons button {
+    font-size: 15px;
+    padding: 14px;
+  }
+}

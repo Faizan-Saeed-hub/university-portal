@@ -1,0 +1,386 @@
+
+/* ================= CONTAINER ================= */
+
+.recommendation-container-1 {
+
+  min-height: 100vh;
+
+  padding: 40px 6%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #1e293b,
+      #334155
+    );
+
+  color: white;
+}
+
+/* ================= CARD ================= */
+
+.recommendation-card-1 {
+
+  max-width: 1000px;
+
+  margin: auto;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 24px;
+
+  padding: 35px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ================= TITLE ================= */
+
+.recommendation-card-1 h2 {
+
+  text-align: center;
+
+  margin-bottom: 30px;
+
+  font-size: 34px;
+
+  font-weight: 700;
+
+  color: white;
+}
+
+/* ================= GRID ================= */
+
+.grid-1 {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 22px;
+}
+
+/* ================= FIELD ================= */
+
+.grid-1 div {
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+/* ================= LABEL ================= */
+
+.grid-1 label {
+
+  margin-bottom: 8px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #e2e8f0;
+}
+
+/* ================= INPUT ================= */
+
+.grid-1 input,
+.grid-1 select {
+
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border-radius: 12px;
+
+  border:
+    1px solid rgba(255,255,255,0.15);
+
+  background:
+    rgba(255,255,255,0.05);
+
+  color: white;
+
+  font-size: 15px;
+
+  transition: 0.3s ease;
+}
+
+.grid-1 input:focus,
+.grid-1 select:focus {
+
+  outline: none;
+
+  border-color: #38bdf8;
+
+  box-shadow:
+    0 0 0 4px rgba(56, 189, 248, 0.15);
+
+  background:
+    rgba(255,255,255,0.08);
+}
+
+/* ================= PLACEHOLDER ================= */
+
+.grid-1 input::placeholder {
+
+  color: #cbd5e1;
+}
+
+/* ================= OPTION ================= */
+
+.grid-1 option {
+
+  background: #1e293b;
+
+  color: white;
+}
+
+/* ================= CHECKBOX ================= */
+
+.checkbox-field-1 {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+
+  background:
+    rgba(255,255,255,0.05);
+
+  padding: 14px 18px;
+
+  border-radius: 12px;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+}
+
+.checkbox-field-1 input {
+
+  width: 18px;
+
+  height: 18px;
+
+  accent-color: #38bdf8;
+}
+
+.checkbox-field-1 label {
+
+  color: #e2e8f0;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+/* ================= BUTTON ================= */
+
+.recommend-btn {
+
+  width: 100%;
+
+  margin-top: 28px;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #38bdf8,
+      #2563eb
+    );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  box-shadow:
+    0 5px 18px rgba(37, 99, 235, 0.4);
+}
+
+.recommend-btn:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 24px rgba(37, 99, 235, 0.5);
+}
+
+/* ================= RESULTS ================= */
+
+.results-section-1 {
+
+  margin-top: 60px;
+}
+
+.results-section-1 h2 {
+
+  text-align: center;
+
+  margin-bottom: 35px;
+
+  font-size: 32px;
+
+  font-weight: 700;
+}
+
+/* ================= RESULTS GRID ================= */
+
+.results-grid-1 {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 25px;
+}
+
+/* ================= UNIVERSITY CARD ================= */
+
+.uni-card-1 {
+
+  background:
+    rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(10px);
+
+  border:
+    1px solid rgba(255,255,255,0.15);
+
+  border-radius: 22px;
+
+  padding: 25px;
+
+  transition: 0.3s ease;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.2);
+}
+
+.uni-card-1:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.3);
+}
+
+/* ================= UNIVERSITY TITLE ================= */
+
+.uni-card-1 h3 {
+
+  color: #38bdf8;
+
+  margin-bottom: 18px;
+
+  font-size: 24px;
+
+  font-weight: 700;
+}
+
+/* ================= TEXT ================= */
+
+.uni-card-1 p {
+
+  margin-bottom: 12px;
+
+  color: #e2e8f0;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+/* ================= BADGE ================= */
+
+.match-badge-1 {
+
+  margin-top: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #38bdf8,
+      #2563eb
+    );
+
+  display: inline-block;
+
+  padding: 9px 16px;
+
+  border-radius: 30px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .grid-1 {
+
+    grid-template-columns: 1fr;
+  }
+
+  .recommendation-card-1 {
+
+    padding: 25px;
+  }
+
+  .recommendation-card-1 h2 {
+
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .recommendation-container-1 {
+
+    padding: 25px 15px;
+  }
+
+  .recommendation-card-1 {
+
+    padding: 20px;
+  }
+
+  .recommendation-card-1 h2 {
+
+    font-size: 24px;
+  }
+
+  .results-section-1 h2 {
+
+    font-size: 26px;
+  }
+}

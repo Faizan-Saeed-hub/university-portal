@@ -1,0 +1,468 @@
+/* =========================
+   DASHBOARD CONTAINER
+========================= */
+
+.dashboard-container {
+  min-height: 100vh;
+  background: #f1f5f9;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+  padding: 40px 8%;
+}
+
+/* =========================
+   GRID LAYOUT
+========================= */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+}
+
+/* =========================
+   LEFT & RIGHT COLUMNS
+========================= */
+
+.column-left,
+.column-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* =========================
+   CARD BASE
+========================= */
+
+.card {
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 30px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile-card {
+  background: linear-gradient(135deg,
+      #ffffff,
+      #f8fbff);
+
+  border: 1px solid #e2e8f0;
+}
+
+/* =========================
+   PROFILE TOP
+========================= */
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  margin-bottom: 30px;
+}
+
+/* =========================
+   AVATAR
+========================= */
+
+.avatar-circle {
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg,
+      #2563eb,
+      #1d4ed8);
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 36px;
+  font-weight: 700;
+
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+/* PROFILE IMAGE */
+
+.avatar-wrapper {
+  position: relative;
+}
+
+.profile-top img {
+  width: 100%;
+  height: 180px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 4px solid #2563eb;
+
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* CAMERA ICON */
+
+.upload-icon {
+  position: absolute;
+
+  bottom: -5px;
+  right: -5px;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  border: 3px solid white;
+}
+
+/* =========================
+   TOP ROW CARDS
+========================= */
+
+/* =========================
+   TOP ROW FIX
+========================= */
+
+.top-row-card {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .profile-image {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.card-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.card-subtitle {
+  margin-top: 10px;
+
+  color: #64748b;
+
+  font-size: 16px;
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.student-badge {
+  display: inline-block;
+
+  margin-top: 10px;
+
+  background: #dcfce7;
+  color: #166534;
+
+  padding: 7px 16px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================
+   PROFILE INFO
+========================= */
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* =========================
+   INFO ITEM
+========================= */
+
+.info-item span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.info-item p {
+  margin-top: 7px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: white;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+
+  background: #e2e8f0;
+
+  border-radius: 20px;
+
+  margin-top: 12px;
+
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+
+  background: linear-gradient(90deg,
+      #2563eb,
+      #60a5fa);
+
+  border-radius: 20px;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status-active {
+  color: #16a34a !important;
+}
+
+
+/* =========================
+   MIDDLE ROW
+========================= */
+
+.middle-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* =========================
+   CHATBOT CARD
+========================= */
+
+.chatbot-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.chat-icon {
+  width: 70px;
+  height: 70px;
+
+  border-radius: 20px;
+
+  background: #e2e8f0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-icon svg {
+  width: 35px;
+  height: 35px;
+  color: #475569;
+}
+
+/* =========================
+   CLICKABLE
+========================= */
+
+.clickable-card {
+  cursor: pointer;
+  min-height: 179px;
+  color: white;
+}
+
+.middle-row-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.clickable-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .middle-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .main-content {
+    padding: 25px 5%;
+  }
+
+  .profile-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .avatar-circle {
+    width: 75px;
+    height: 75px;
+
+    font-size: 30px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .card-title {
+    font-size: 24px;
+  }
+
+  .card-title-large {
+    font-size: 21px;
+  }
+
+  .card-title-small {
+    font-size: 21px;
+  }
+
+  .info-item p {
+    font-size: 16px;
+  }
+
+  .chatbot-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+
+@media (max-width: 480px) {
+
+  .main-content {
+    padding: 20px 4%;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .card-title {
+    font-size: 22px;
+  }
+
+  .card-title-large {
+    font-size: 24px;
+  }
+
+  .card-title-small {
+    font-size: 18px;
+  }
+
+  .card-subtitle {
+    font-size: 14px;
+  }
+
+  .avatar-circle {
+    width: 65px;
+    height: 65px;
+
+    font-size: 24px;
+  }
+
+  .student-badge {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .info-item p {
+    font-size: 15px;
+  }
+
+  .chat-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .chat-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+}

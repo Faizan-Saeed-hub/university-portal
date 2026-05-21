@@ -1,0 +1,230 @@
+/* ================= MAIN CONTAINER ================= */
+
+.upload-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #1e293b,
+      #334155
+    );
+
+  padding: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= CARD ================= */
+
+.upload-card {
+  width: 450px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 22px;
+
+  padding: 35px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3);
+
+  color: white;
+
+  animation: fadeIn 0.5s ease;
+}
+
+/* ================= TITLE ================= */
+
+.upload-card h2 {
+  text-align: center;
+
+  margin-bottom: 25px;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+/* ================= LABELS ================= */
+
+.upload-card label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  margin-top: 15px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #e2e8f0;
+}
+
+/* ================= FILE INPUT ================= */
+
+.upload-card input[type="file"] {
+
+  width: 100%;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  border: 1px dashed #94a3b8;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.upload-card input[type="file"]:hover {
+
+  border-color: #38bdf8;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ================= FILE NAME ================= */
+
+.file-name {
+
+  margin-top: 6px;
+
+  font-size: 13px;
+
+  color: #cbd5e1;
+
+  word-break: break-word;
+}
+
+/* ================= ERROR MESSAGE ================= */
+
+.error-text {
+
+  background: rgba(255, 0, 0, 0.15);
+
+  border: 1px solid rgba(255, 0, 0, 0.3);
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  color: #fecaca;
+
+  margin-bottom: 15px;
+
+  font-size: 14px;
+}
+
+/* ================= SUCCESS MESSAGE ================= */
+
+.success-text {
+
+  background: rgba(0, 255, 120, 0.12);
+
+  border: 1px solid rgba(0, 255, 120, 0.25);
+
+  padding: 10px;
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  color: #bbf7d0;
+
+  margin-bottom: 15px;
+
+  font-size: 14px;
+}
+
+/* ================= BUTTON ================= */
+
+.upload-btn {
+
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #38bdf8,
+      #2563eb
+    );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  box-shadow:
+    0 5px 18px rgba(37, 99, 235, 0.4);
+}
+
+.upload-btn:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 24px rgba(37, 99, 235, 0.5);
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 520px) {
+
+  .upload-card {
+
+    width: 100%;
+
+    padding: 25px;
+  }
+
+  .upload-card h2 {
+
+    font-size: 24px;
+  }
+}

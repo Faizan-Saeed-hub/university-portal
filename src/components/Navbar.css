@@ -1,0 +1,206 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8%;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo span {
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  position: relative;
+  padding: 8px 4px;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #38bdf8;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.login-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.register-btn {
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.register-btn:hover {
+  background: linear-gradient(135deg, #0284c7, #1d4ed8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+}
+
+.logout-btn {
+  background: linear-gradient(135deg, #f87171, #dc2626);
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.45);
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 16px 4%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    padding: 4px 0;
+  }
+
+  .login-btn, .register-btn, .logout-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .login-btn, .register-btn, .logout-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+}

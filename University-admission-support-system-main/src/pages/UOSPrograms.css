@@ -1,0 +1,276 @@
+
+
+.uos-page {
+  min-height: 100vh;
+  padding: 40px;
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #1e293b,
+      #334155
+    );
+
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #cbd5e1;
+  font-size: 20px;
+}
+
+/* SEARCH */
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.search-box input {
+  width: 420px;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+
+  background:
+    rgba(255,255,255,0.1);
+
+  color: white;
+  font-size: 16px;
+
+  backdrop-filter: blur(10px);
+}
+
+.search-box input::placeholder {
+  color: #cbd5e1;
+}
+
+/* GRID */
+
+.department-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 30px;
+}
+
+/* CARD */
+
+.department-card {
+
+  background:
+    rgba(255,255,255,0.08);
+
+  border:
+    1px solid rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(14px);
+
+  border-radius: 22px;
+
+  padding: 30px;
+
+  transition: 0.4s;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.3);
+}
+
+.department-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 0 25px rgba(56,189,248,0.4);
+}
+
+.department-card h2 {
+  font-size: 22px;
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.department-card p {
+  margin-bottom: 15px;
+  color: #e2e8f0;
+}
+
+/* FEE */
+
+.fee-box {
+  margin-bottom: 20px;
+  color: #e2e8f0;
+}
+
+/* BUTTON */
+
+.department-card button {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #38bdf8,
+      #2563eb
+    );
+
+  transition: 0.3s;
+}
+
+.department-card button:hover {
+  transform: scale(1.03);
+}
+
+/* MODAL */
+
+.modal-overlay {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    rgba(0,0,0,0.7);
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.modal {
+
+  width: 80%;
+  max-width: 900px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background:
+    #1e293b;
+
+  border-radius: 24px;
+
+  padding: 40px;
+
+  position: relative;
+
+  border:
+    1px solid rgba(255,255,255,0.1);
+}
+
+.modal h2 {
+  font-size: 42px;
+  color: #38bdf8;
+  margin-bottom: 30px;
+}
+
+/* CLOSE */
+
+.close-btn {
+
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: red;
+
+  color: white;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+/* PROGRAM CARD */
+
+.program-card {
+
+  background:
+    rgba(255,255,255,0.06);
+
+  border-radius: 18px;
+
+  padding: 25px;
+
+  margin-bottom: 20px;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+}
+
+.program-card h3 {
+  color: #38bdf8;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.program-card p {
+  margin-bottom: 10px;
+  color: #e2e8f0;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px) {
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .modal {
+    width: 95%;
+    padding: 20px;
+  }
+}

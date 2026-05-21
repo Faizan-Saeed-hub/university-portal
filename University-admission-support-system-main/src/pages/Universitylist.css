@@ -1,0 +1,259 @@
+/* ================= CONTAINER ================= */
+
+.university-container {
+
+  min-height: 100vh;
+
+  padding: 50px 6%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #1e293b,
+      #334155
+    );
+
+  color: white;
+
+  text-align: center;
+}
+
+/* ================= TITLE ================= */
+
+.university-container h1 {
+
+  font-size: 42px;
+
+  font-weight: 700;
+
+  margin-bottom: 12px;
+
+  color: white;
+}
+
+.university-container p {
+
+  color: #cbd5e1;
+
+  font-size: 17px;
+
+  margin-bottom: 35px;
+}
+
+/* ================= GRID ================= */
+
+.card-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 28px;
+
+  margin-top: 30px;
+}
+
+/* ================= CARD ================= */
+
+.card {
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(12px);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  transition: 0.35s ease;
+
+  box-shadow:
+    0 8px 28px rgba(0,0,0,0.25);
+
+  position: relative;
+}
+
+/* ================= HOVER ================= */
+
+.card:hover {
+
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.35);
+
+  border:
+    1px solid rgba(56, 189, 248, 0.35);
+}
+
+/* ================= IMAGE ================= */
+
+.card img {
+
+  width: 100%;
+
+  height: 220px;
+
+  object-fit: cover;
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.08);
+}
+
+/* ================= BODY ================= */
+
+.card-body {
+
+  padding: 24px;
+
+  text-align: left;
+}
+
+/* ================= UNIVERSITY NAME ================= */
+
+.card-body h2 {
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  color: #38bdf8;
+
+  margin-bottom: 16px;
+}
+
+/* ================= DETAILS ================= */
+
+.card-body p {
+
+  color: #e2e8f0;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  margin-bottom: 10px;
+}
+
+/* ================= BUTTON ================= */
+
+.card-body button {
+
+  margin-top: 18px;
+
+  padding: 12px 20px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #38bdf8,
+      #2563eb
+    );
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  width: 100%;
+}
+
+/* ================= BUTTON HOVER ================= */
+
+.card-body button:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* ================= BADGE ================= */
+
+.uni-badge {
+
+  position: absolute;
+
+  top: 18px;
+
+  right: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #38bdf8,
+      #2563eb
+    );
+
+  color: white;
+
+  padding: 8px 14px;
+
+  border-radius: 30px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  backdrop-filter: blur(8px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .university-container {
+
+    padding: 35px 20px;
+  }
+
+  .university-container h1 {
+
+    font-size: 34px;
+  }
+
+  .card img {
+
+    height: 200px;
+  }
+
+  .card-body h2 {
+
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .university-container h1 {
+
+    font-size: 28px;
+  }
+
+  .card-body {
+
+    padding: 20px;
+  }
+
+  .card-body button {
+
+    padding: 11px;
+  }
+}
