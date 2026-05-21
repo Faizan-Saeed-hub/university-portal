@@ -16,7 +16,7 @@ const connectDB = async () => {
     console.log(`MongoDB Connected successfully to: ${connUri.startsWith("mongodb+srv") ? "MongoDB Atlas (Cloud)" : "Local MongoDB"}`);
   } catch (err) {
     console.error("❌ MongoDB connection error:", err);
-    process.exit(1);
+    // Do not call process.exit(1) in a serverless environment as it crashes the entire worker
   }
 };
 

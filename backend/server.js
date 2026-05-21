@@ -36,11 +36,18 @@ app.use("/api/users", userRoutes);
 
 /* ================= MULTER SETUP ================= */
 
-const uploadPath = path.join(__dirname, "uploads");
+// Use /tmp for uploads in Vercel serverless environment since the main filesystem is read-only
+const uploadPath = process.env.VERCEL
+  ? path.join("/tmp", "uploads")
+  : path.join(__dirname, "uploads");
 
 /* Create uploads folder automatically */
-if (!fs.existsSync(uploadPath)) {
-  fs.mkdirSync(uploadPath, { recursive: true });
+try {
+  if (!fs.existsSync(uploadPath)) {
+    fs.mkdirSync(uploadPath, { recursive: true });
+  }
+} catch (err) {
+  console.warn("⚠️ Uploads folder creation skipped or failed:", err.message);
 }
 
 const storage = multer.diskStorage({
