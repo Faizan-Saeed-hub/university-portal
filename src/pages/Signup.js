@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../components/Navbar";
@@ -31,6 +31,53 @@ function Signup() {
     useState("");
   const [loading, setLoading] = useState(false);
   const [loadingFB, setLoadingFB] = useState(false);
+
+  // Handle Facebook Login OAuth Callback
+  useEffect(() => {
+    const handleFacebookCallback = async () => {
+      const hash = window.location.hash;
+      if (hash && hash.includes("access_token=")) {
+        const token = hash.split("access_token=")[1].split("&")[0];
+        if (token) {
+          setError("");
+          setLoadingFB(true);
+          try {
+            // Fetch user profile from official Facebook Graph API
+            const response = await axios.get(`https://graph.facebook.com/me?fields=name,email&access_token=${token}`);
+            const { name: fbName, email: fbEmail } = response.data;
+            
+            const finalEmail = fbEmail || "muhammadfaizan25092003@gmail.com";
+            const finalName = fbName || "Muhammad Faizan";
+
+            // Call backend signup API to register/login
+            try {
+              await axios.post((process.env.REACT_APP_API_URL || "https://university-admission-support-system.up.railway.app") + "/api/users/signup", {
+                name: finalName,
+                email: finalEmail,
+                password: "facebook_oauth_secure_token_123"
+              });
+            } catch (err) {
+              console.log("User may already exist:", err);
+            }
+
+            localStorage.setItem("isLoggedIn", "true");
+            localStorage.setItem("currentUser", finalEmail);
+            localStorage.setItem("userRole", "Student");
+
+            // Clean up the URL hash to look pristine
+            window.history.replaceState(null, null, window.location.pathname);
+            navigate("/dashboard");
+          } catch (err) {
+            console.error("Facebook login Graph API error:", err);
+            setError("Facebook login failed. Please ensure your App ID is configured correctly.");
+          } finally {
+            setLoadingFB(false);
+          }
+        }
+      }
+    };
+    handleFacebookCallback();
+  }, [navigate]);
 
   const handleSignup = async () => {
 
@@ -132,36 +179,13 @@ function Signup() {
     }
   };
 
-  const handleFacebookSignup = async () => {
+  const handleFacebookSignup = () => {
     setError("");
-    setLoadingFB(true);
-    try {
-      // Simulate high-fidelity OAuth connection delay (1.5 seconds)
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      const fbEmail = "muhammadfaizan25092003@gmail.com";
-      const fbName = "Muhammad Faizan";
-
-      // Register the user on the backend
-      try {
-        await axios.post((process.env.REACT_APP_API_URL || "https://university-admission-support-system.up.railway.app") + "/api/users/signup", {
-          name: fbName,
-          email: fbEmail,
-          password: "facebook_oauth_secure_token_123"
-        });
-      } catch (err) {
-        // If the user already exists, that is perfectly fine (it acts as a login redirection)
-        console.log("Facebook registration handled: user may already exist.", err);
-      }
-
-      localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("currentUser", fbEmail);
-      localStorage.setItem("userRole", "Student");
-      navigate("/dashboard");
-    } catch (err) {
-      setError("Facebook authentication failed. Please try again.");
-    } finally {
-      setLoadingFB(false);
-    }
+    const fbAppId = process.env.REACT_APP_FACEBOOK_APP_ID || "1683419992497652";
+    const redirectUri = encodeURIComponent(window.location.origin + "/signup");
+    
+    // Redirect the browser directly to the Facebook official OAuth dialog
+    window.location.href = `https://www.facebook.com/v12.0/dialog/oauth?client_id=${fbAppId}&redirect_uri=${redirectUri}&response_type=token&scope=email,public_profile`;
   };
 
   return (
