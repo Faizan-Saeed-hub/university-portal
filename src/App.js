@@ -16,6 +16,7 @@ import Users from "./admin/pages/Users";
 import Universities from "./admin/pages/Universities";
 import Documents from "./admin/pages/Documents";
 import Recommendations from "./admin/pages/Recommendations";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 import "./index.css";
 
@@ -108,6 +109,7 @@ function App() {
         <Route path="/admin/documents" element={<AdminRoute><Documents /></AdminRoute>} />
         <Route path="/admin/recommendations" element={<AdminRoute><Recommendations /></AdminRoute>} />
       </Routes>
+      <WhatsAppButton />
     </BrowserRouter>
   );
 }
