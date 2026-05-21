@@ -224,6 +224,102 @@
   transform: none;
 }
 
+/* SOCIAL SIGNUP OPTIONS */
+
+.social-signup-container {
+  margin: 5px 0 10px;
+  width: 100%;
+}
+
+.social-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.2px;
+}
+
+.facebook-btn {
+  background: #1877f2;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.25);
+}
+
+.facebook-btn:hover:not(:disabled) {
+  background: #166fe5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(24, 119, 242, 0.35);
+}
+
+.facebook-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(24, 119, 242, 0.2);
+}
+
+.facebook-btn:disabled {
+  background-color: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.social-icon-svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Spinner for Facebook Connection */
+.spinner-fb {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin-fb 0.8s ease-in-out infinite;
+}
+
+@keyframes spin-fb {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Signup Divider styling */
+.signup-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 22px 0;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.signup-divider::before,
+.signup-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 2px solid #f1f5f9;
+  transition: border-color 0.3s ease;
+}
+
+.signup-divider:not(:empty)::before {
+  margin-right: 14px;
+}
+
+.signup-divider:not(:empty)::after {
+  margin-left: 14px;
+}
+
 .signin-text {
   margin-top: 25px;
   text-align: center;
