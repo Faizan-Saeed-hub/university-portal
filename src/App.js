@@ -16,6 +16,7 @@ import Users from "./admin/pages/Users";
 import Universities from "./admin/pages/Universities";
 import Documents from "./admin/pages/Documents";
 import Recommendations from "./admin/pages/Recommendations";
+import FacebookOAuth from "./pages/FacebookOAuth";
 
 import "./index.css";
 
@@ -43,6 +44,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/facebook-oauth" element={<FacebookOAuth />} />
 
         {/* Protected Routes */}
         <Route

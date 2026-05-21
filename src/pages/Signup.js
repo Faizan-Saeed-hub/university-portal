@@ -181,11 +181,16 @@ function Signup() {
 
   const handleFacebookSignup = () => {
     setError("");
-    const fbAppId = process.env.REACT_APP_FACEBOOK_APP_ID || "1683419992497652";
+    const fbAppId = process.env.REACT_APP_FACEBOOK_APP_ID;
     const redirectUri = encodeURIComponent(window.location.origin + "/signup");
     
-    // Redirect the browser directly to the Facebook official OAuth dialog
-    window.location.href = `https://www.facebook.com/v12.0/dialog/oauth?client_id=${fbAppId}&redirect_uri=${redirectUri}&response_type=token&scope=email,public_profile`;
+    if (fbAppId && fbAppId !== "1683419992497652") {
+      // Redirect the browser directly to the Facebook official OAuth dialog
+      window.location.href = `https://www.facebook.com/v12.0/dialog/oauth?client_id=${fbAppId}&redirect_uri=${redirectUri}&response_type=token&scope=email,public_profile`;
+    } else {
+      // Redirect to our high-fidelity, zero-configuration Mock Facebook Login page
+      window.location.href = `/facebook-oauth?redirect_uri=${window.location.origin + "/signup"}`;
+    }
   };
 
   return (
