@@ -26,21 +26,25 @@ export default function Home() {
       name: "University of Sargodha",
       image:
         "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      website: "https://su.edu.pk",
     },
     {
       name: "Punjab University",
       image:
         "https://images.pexels.com/photos/1205651/pexels-photo-1205651.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      website: "https://pu.edu.pk",
     },
     {
       name: "GC University Faisalabad",
       image:
         "https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      website: "https://gcuf.edu.pk",
     },
     {
       name: "University of Lahore",
       image:
         "https://images.pexels.com/photos/6147369/pexels-photo-6147369.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      website: "https://uol.edu.pk",
     },
   ];
   const educationImages = [
@@ -201,12 +205,38 @@ export default function Home() {
         <div className="university-grid">
           {universities.map((uni, index) => (
             <div className="university-card" key={index}>
-              <img
-                src={uni.image}
-                alt={uni.name}
-              />
-
-              <h3>{uni.name}</h3>
+              <div className="university-card-img-wrapper">
+                <img
+                  src={uni.image}
+                  alt={uni.name}
+                />
+              </div>
+              <div className="university-card-content">
+                <h3>{uni.name}</h3>
+                <div className="university-card-buttons">
+                  <button
+                    className="uni-card-btn primary"
+                    onClick={() => {
+                      const isLoggedIn = localStorage.getItem("isLoggedIn");
+                      if (isLoggedIn) {
+                        navigate("/universities");
+                      } else {
+                        navigate("/login");
+                      }
+                    }}
+                  >
+                    View Programs
+                  </button>
+                  <a
+                    href={uni.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="uni-card-btn secondary"
+                  >
+                    Visit Website
+                  </a>
+                </div>
+              </div>
             </div>
           ))}
         </div>
